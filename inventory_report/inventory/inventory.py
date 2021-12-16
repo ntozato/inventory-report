@@ -1,4 +1,5 @@
 import csv
+import json
 from inventory_report.reports.complete_report import CompleteReport
 from inventory_report.reports.simple_report import SimpleReport
 
@@ -8,7 +9,10 @@ class Inventory:
         dict_list = []
 
         with open(path) as file:
-            reader = csv.DictReader(file, delimiter=",", quotechar='"')
+            if path.endswith('.csv'):
+                reader = csv.DictReader(file, delimiter=",", quotechar='"')
+            if path.endswith('.json'):
+                reader = json.load(file)
             for row in reader:
                 dict_list.append(row)
 
