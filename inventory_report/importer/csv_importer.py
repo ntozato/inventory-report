@@ -1,6 +1,7 @@
 from inventory_report.importer.importer import Importer
 import csv
 
+
 class CsvImporter(Importer):
     def import_data(path):
         file_type = path.split('.')[1]
@@ -15,4 +16,5 @@ class CsvImporter(Importer):
                 dict_list.append(row)
             return dict_list
 
-print(CsvImporter.import_data('inventory_report/data/inventory.csv'))
+
+# print(CsvImporter.import_data('inventory_report/data/inventory.csv'))

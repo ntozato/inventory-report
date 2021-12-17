@@ -1,6 +1,7 @@
 from inventory_report.importer.importer import Importer
 import xml.etree.ElementTree as ET
 
+
 class XmlImporter(Importer):
     def import_data(path):
         file_type = path.split('.')[1]
@@ -18,4 +19,5 @@ class XmlImporter(Importer):
             dict_list.append(tag_dict)
         return dict_list
 
-print(XmlImporter.import_data('inventory_report/data/inventory.xml'))
+
+# print(XmlImporter.import_data('inventory_report/data/inventory.xml'))
